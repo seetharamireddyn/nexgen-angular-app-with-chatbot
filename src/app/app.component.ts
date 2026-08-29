@@ -52,7 +52,7 @@ export class AppComponent {
 
   sendInquiry(): void {
     const subject = encodeURIComponent(
-      `NexGen Inquiry${this.selectedTopic ? ` - ${this.selectedTopic}` : ''}`
+      `PureMinds Inquiry${this.selectedTopic ? ` - ${this.selectedTopic}` : ''}`
     );
 
     const body = encodeURIComponent(
