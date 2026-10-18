@@ -65,6 +65,6 @@ export class AppComponent {
     );
 
     // Replace this address with your real business email.
-    window.location.href = `mailto:seetharamireddy.n@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@qyveriq.com?subject=${subject}&body=${body}`;
   }
 }
