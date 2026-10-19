@@ -1,13 +1,14 @@
 <header class="site-header">
   <div class="container nav">
     <button class="brand" type="button" (click)="scrollTo('home')" aria-label="Qyveriq home">
-      <img src="assets/qyveriq_logo.png" alt="Qyveriq logo">
+      <img src="assets/QyveriqTechnologiesLogo.png" alt="Qyveriq Technologies Private Limited">
     </button>
 
     <nav aria-label="Main navigation">
       <button type="button" (click)="scrollTo('about')">About</button>
-      <button type="button" (click)="scrollTo('services')">What We Do</button>
-      <button type="button" (click)="scrollTo('vision')">Vision</button>
+      <button type="button" (click)="scrollTo('services')">Services</button>
+      <button type="button" (click)="scrollTo('training')">CSV Training</button>
+      <button type="button" (click)="scrollTo('vision')">Our Approach</button>
       <button class="nav-contact" type="button" (click)="openChat()">Contact Us</button>
     </nav>
   </div>
@@ -19,60 +20,111 @@
     <div class="hero-glow glow-two"></div>
 
     <div class="container hero-content">
-           <p class="eyebrow">Building the Next Generation</p>
-      <h1>Empowering <span>Future Minds</span></h1>
-
+      <!-- <div class="hero-logo-wrap">
+        <img class="hero-logo" src="assets/QyveriqTechnologiesLogo.png"
+             alt="Qyveriq Technologies Private Limited logo">
+      </div> -->
+      <p class="eyebrow">Your trusted partner in Pharma &amp; Life Sciences</p>
+      <h1>Compliance, quality and <span>digital excellence.</span></h1>
       <p class="hero-copy">
-        We develop future-ready talent and create innovative technology
-        solutions that help people and businesses move forward.
+        Qyveriq Technologies Private Limited supports pharmaceutical and life sciences
+        organizations through practical training, computer system validation and
+        documentation support designed around real-world needs.
       </p>
 
       <div class="hero-actions">
-        <button class="primary-btn" type="button" (click)="scrollTo('services')">
-          Explore What We Do
-        </button>
-        <button class="secondary-btn" type="button" (click)="openChat()">
-          Contact Us
-        </button>
+        <button class="primary-btn" type="button" (click)="scrollTo('services')">Explore Our Services</button>
+        <button class="secondary-btn" type="button" (click)="openChat()">Talk to Our Team</button>
+      </div>
+
+      <div class="hero-points" aria-label="Our focus areas">
+        <span>Training</span><span>Consulting</span><span>Compliance</span><span>Support</span>
       </div>
     </div>
   </section>
 
   <section class="section" id="services">
     <div class="container">
-      <p class="section-label">Our Focus</p>
-      <h2>What We Do</h2>
+      <p class="section-label">What We Do</p>
+      <h2>Specialized support for regulated industries</h2>
       <p class="section-intro">
-        A future-focused approach that brings people, skills and technology together.
+        We help teams build capability, strengthen validated systems and maintain
+        clear, audit-ready documentation.
       </p>
 
       <div class="cards">
         <article class="card">
           <div class="card-icon">01</div>
-          <h3>Talent Development</h3>
-          <p>
-            Build practical skills and prepare people for next-generation careers
-            through focused learning and real-world experience.
-          </p>
+          <h3>Pharma &amp; CSV Training</h3>
+          <p>Practical learning in Computer System Validation (CSV), Computer Software Assurance (CSA), GAMP 5 concepts and regulatory expectations.</p>
+          <button class="text-link" type="button" (click)="openChat('CSV and Pharma Training')">Enquire about training →</button>
         </article>
 
         <article class="card">
           <div class="card-icon">02</div>
-          <h3>Technology</h3>
-          <p>
-            Create modern software and digital solutions that solve meaningful
-            business and customer problems.
-          </p>
+          <h3>Computer System Validation</h3>
+          <p>Support for validation planning, risk assessment, testing, traceability, gap assessments and periodic reviews across regulated systems.</p>
+          <button class="text-link" type="button" (click)="openChat('Computer System Validation Support')">Discuss CSV support →</button>
         </article>
 
         <article class="card">
           <div class="card-icon">03</div>
-          <h3>Pharma + Tech</h3>
-          <p>
-            Bring technology, data and digital capabilities together to support
-            modern pharmaceutical and life-science organizations.
-          </p>
+          <h3>SOP &amp; Documentation</h3>
+          <p>Structured SOP drafting and review, template development, documentation improvement and regulatory-alignment support.</p>
+          <button class="text-link" type="button" (click)="openChat('SOP and Documentation Support')">Discuss documentation →</button>
         </article>
+
+        <article class="card">
+          <div class="card-icon">04</div>
+          <h3>LIMS Master Data Training</h3>
+          <p>Training focused on master data concepts, configuration awareness, data management and good practices for laboratory systems.</p>
+          <button class="text-link" type="button" (click)="openChat('LIMS Master Data Training')">Ask about LIMS training →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">05</div>
+          <h3>Digital &amp; IT Solutions</h3>
+          <p>Technology and web solutions that help businesses improve workflows, organize information and support digital operations.</p>
+          <button class="text-link" type="button" (click)="openChat('Digital and IT Solutions')">Discuss a technology need →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">06</div>
+          <h3>Consulting &amp; Project Support</h3>
+          <p>Flexible consulting and delivery support shaped around project objectives, team needs and business priorities.</p>
+          <button class="text-link" type="button" (click)="openChat('Consulting and Project Support')">Talk to a consultant →</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section training" id="training">
+    <div class="container">
+      <p class="section-label">Build Skills With Confidence</p>
+      <h2>Computer System Validation (CSV) Training</h2>
+      <p class="section-intro">
+        A practical, lifecycle-based learning program for professionals who work with
+        computerized systems in pharmaceutical and life sciences environments.
+      </p>
+
+      <div class="training-grid">
+        <article class="training-item"><span>01</span><div><h3>CSV lifecycle &amp; GAMP 5</h3><p>Understand validation stages, system categorization and lifecycle documentation.</p></div></article>
+        <article class="training-item"><span>02</span><div><h3>Planning &amp; risk assessment</h3><p>Explore validation plans, risk-based approaches and fit-for-purpose testing.</p></div></article>
+        <article class="training-item"><span>03</span><div><h3>Requirements &amp; traceability</h3><p>Learn about URS, functional specifications, test cases and traceability matrices.</p></div></article>
+        <article class="training-item"><span>04</span><div><h3>IQ, OQ, PQ &amp; test execution</h3><p>Review qualification protocols, test evidence, deviations and documentation practices.</p></div></article>
+        <article class="training-item"><span>05</span><div><h3>CSA &amp; risk-based assurance</h3><p>Understand critical thinking and risk-based assurance concepts for software.</p></div></article>
+        <article class="training-item"><span>06</span><div><h3>Data integrity &amp; regulations</h3><p>Explore electronic records, electronic signatures, data integrity and audit readiness.</p></div></article>
+        <article class="training-item"><span>07</span><div><h3>Gap assessment &amp; periodic review</h3><p>Identify documentation or process gaps and organize practical follow-up actions.</p></div></article>
+        <article class="training-item"><span>08</span><div><h3>Vendor &amp; audit readiness</h3><p>Discuss supplier oversight, evidence review and preparation for inspections.</p></div></article>
+      </div>
+
+      <div class="training-callout">
+        <div>
+          <p class="section-label">Training for teams and individuals</p>
+          <h3>Learn the concepts. Practice the process.</h3>
+          <p>Ask us about training formats, course coverage and a program suited to your needs.</p>
+        </div>
+        <button class="primary-btn" type="button" (click)="openChat('CSV Training Enquiry')">Enquire About Training</button>
       </div>
     </div>
   </section>
@@ -81,50 +133,62 @@
     <div class="container about-grid">
       <div>
         <p class="section-label">About Qyveriq</p>
-        <h2>Building Minds.<br><span>Shaping the Future.</span></h2>
+        <h2>Practical expertise.<br><span>Purposeful progress.</span></h2>
         <p>
-          Qyveriq Technologies is envisioned as a future-focused organization
-          where people, skills and technology come together.
+          Qyveriq Technologies Private Limited is focused on supporting pharma,
+          life sciences and technology initiatives through training, consulting and
+          delivery-oriented services.
         </p>
         <p>
-          Our goal is to help the next generation learn, innovate and build
-          solutions that make a meaningful difference.
+          We believe effective support should be understandable, adaptable and
+          connected to the realities of the workplace. Our aim is to help clients
+          strengthen their processes while helping professionals grow their skills.
         </p>
       </div>
 
-      <div class="vision-card" id="vision">
-        <div class="vision-number">VISION</div>
-        <h3>Future-ready people. Meaningful innovation.</h3>
-        <p>
-          To create a community of future-ready minds and empower them with the
-          skills, opportunities and technology needed to lead tomorrow.
-        </p>
+      <div class="about-highlights">
+        <article><span class="mini-icon">✓</span><div><h3>Practical approach</h3><p>Learning and support grounded in real-world scenarios.</p></div></article>
+        <article><span class="mini-icon">✓</span><div><h3>Tailored engagement</h3><p>Services shaped around your systems, goals and team requirements.</p></div></article>
+        <article><span class="mini-icon">✓</span><div><h3>Quality mindset</h3><p>Clear documentation, risk awareness and a focus on compliance.</p></div></article>
       </div>
     </div>
   </section>
 
-  <section class="section contact" id="contact">
-    <div class="container">
-      <p class="section-label">Start a Conversation</p>
-      <h2>Let's Build the Future</h2>
-      <p class="section-intro">
-        Have a requirement, training need or Pharma + Tech opportunity?
-        Our team would love to hear from you.
+  <section class="section vision" id="vision">
+    <div class="container vision-panel">
+      <p class="section-label">Our Approach</p>
+      <h2>Learn. Consult. Grow.</h2>
+      <p>
+        Our vision is to make specialized knowledge and dependable support more
+        accessible—helping professionals build confidence and organizations move
+        forward with quality, compliance and innovation in mind.
       </p>
-      <button class="primary-btn link-btn" type="button" (click)="openChat()">
-        Start a Conversation
-      </button>
+      <div class="vision-tags"><span>People</span><span>Quality</span><span>Compliance</span><span>Innovation</span></div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container contact-panel">
+      <p class="section-label">Start a Conversation</p>
+      <h2>How can we support you?</h2>
+      <p class="section-intro">
+        Tell us about your training requirement, CSV project, documentation need or
+        technology initiative. Choose a topic in our contact assistant to get started.
+      </p>
+      <button class="primary-btn" type="button" (click)="openChat()">Contact Qyveriq</button>
+      <p class="contact-email">Email: <a href="mailto:info@qyveriq.com">info@qyveriq.com</a></p>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="container footer-content">
-    <span>© {{ year }} Qyveriq Technologies Pvt Ltd. All rights reserved.</span>
+    <img src="assets/QyveriqTechnologiesLogo.png" alt="Qyveriq Technologies logo">
+    <span>© {{ year }} Qyveriq Technologies Private Limited. All rights reserved.</span>
+    <span class="footer-tagline">Learn. Consult. Grow.</span>
   </div>
 </footer>
 
-<!-- Chatbot-style contact assistant -->
 @if (isChatOpen) {
   <div class="chat-overlay" (click)="closeChat()" aria-hidden="true"></div>
 
@@ -134,118 +198,64 @@
         <div class="chat-avatar">Q</div>
         <div>
           <strong id="chat-title">Qyveriq Assistant</strong>
-          <span>Let's build something great</span>
+          <span>Pharma, life sciences &amp; technology</span>
         </div>
       </div>
-
-      <button class="close-chat" type="button" (click)="closeChat()" aria-label="Close contact assistant">
-        ×
-      </button>
+      <button class="close-chat" type="button" (click)="closeChat()" aria-label="Close contact assistant">×</button>
     </div>
 
     @if (chatStep === 'welcome') {
       <div class="chat-body">
         <div class="bot-message">
-          <strong>Hello! 👋</strong>
-          <p>How can Qyveriq Technologies help you today?</p>
+          <strong>Hello! Welcome to Qyveriq.</strong>
+          <p>What would you like to discuss with our team?</p>
         </div>
-
         <div class="topic-list">
-          <button type="button" (click)="chooseTopic('Business / IT Services')">
-            <span>💻</span>
-            <span>Business / IT Services</span>
-          </button>
-
-          <button type="button" (click)="chooseTopic('Training & Talent Development')">
-            <span>🎓</span>
-            <span>Training & Talent Development</span>
-          </button>
-
-          <button type="button" (click)="chooseTopic('Pharma + Tech Services')">
-            <span>💊</span>
-            <span>Pharma + Tech Services</span>
-          </button>
-
-          <button type="button" class="inquiry-option" (click)="startInquiry()">
-            <span>✉️</span>
-            <span>Send an Inquiry</span>
-          </button>
+          <button type="button" (click)="chooseTopic('CSV and Pharma Training')"><span>🎓</span><span>CSV &amp; Pharma Training</span></button>
+          <button type="button" (click)="chooseTopic('Computer System Validation Support')"><span>✓</span><span>Computer System Validation</span></button>
+          <button type="button" (click)="chooseTopic('LIMS Master Data Training')"><span>🧪</span><span>LIMS Master Data Training</span></button>
+          <button type="button" (click)="chooseTopic('SOP and Documentation Support')"><span>📄</span><span>SOP &amp; Documentation</span></button>
+          <button type="button" (click)="chooseTopic('Digital and IT Solutions')"><span>💻</span><span>Digital &amp; IT Solutions</span></button>
+          <button type="button" class="inquiry-option" (click)="startInquiry()"><span>✉</span><span>General Inquiry</span></button>
         </div>
       </div>
     } @else {
       <form class="chat-body inquiry-form" (ngSubmit)="sendInquiry()">
         <div class="bot-message">
-          <strong>Great choice!</strong>
-          <p>
-            {{ selectedTopic || 'Tell us what you are looking for' }}.
-            Please share a few details and we'll get back to you.
-          </p>
+          <strong>Let's talk about your requirement.</strong>
+          <p>{{ selectedTopic || 'General inquiry' }}. Share your details and your email application will open with the inquiry prepared.</p>
         </div>
 
         <label>
           Name <span>*</span>
-          <input
-            type="text"
-            name="name"
-            [(ngModel)]="inquiry.name"
-            required
-            autocomplete="name"
-            placeholder="Your name">
+          <input type="text" name="name" [(ngModel)]="inquiry.name" required autocomplete="name" placeholder="Your full name">
         </label>
 
         <label>
           Email <span>*</span>
-          <input
-            type="email"
-            name="email"
-            [(ngModel)]="inquiry.email"
-            required
-            autocomplete="email"
-            placeholder="you@example.com">
+          <input type="email" name="email" [(ngModel)]="inquiry.email" required autocomplete="email" placeholder="you@example.com">
         </label>
 
         <label>
           Company
-          <input
-            type="text"
-            name="company"
-            [(ngModel)]="inquiry.company"
-            autocomplete="organization"
-            placeholder="Company name">
+          <input type="text" name="company" [(ngModel)]="inquiry.company" autocomplete="organization" placeholder="Company name (optional)">
         </label>
 
         <label>
           Phone
-          <input
-            type="tel"
-            name="phone"
-            [(ngModel)]="inquiry.phone"
-            autocomplete="tel"
-            placeholder="+91">
+          <input type="tel" name="phone" [(ngModel)]="inquiry.phone" autocomplete="tel" placeholder="+91 (optional)">
         </label>
 
         <label>
           Message <span>*</span>
-          <textarea
-            name="message"
-            [(ngModel)]="inquiry.message"
-            required
-            rows="4"
-            placeholder="Tell us how we can help..."></textarea>
+          <textarea name="message" [(ngModel)]="inquiry.message" required rows="4" placeholder="Tell us how we can help..."></textarea>
         </label>
 
         <div class="form-actions">
-          <button class="back-btn" type="button" (click)="chatStep = 'welcome'">
-            Back
-          </button>
-          <button class="send-btn" type="submit">
-            Send Inquiry ✉
-          </button>
+          <button class="back-btn" type="button" (click)="chatStep = 'welcome'">Back</button>
+          <button class="send-btn" type="submit">Prepare Inquiry ✉</button>
         </div>
-
-        <small class="mail-note">
-          This opens your email application with the inquiry details.
-        </small>
+        <small class="mail-note">This opens your default email app. Your message is not sent automatically.</small>
       </form>
     }
   </aside>

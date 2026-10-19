@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import emailjs from '@emailjs/browser';
 
 type ChatStep = 'welcome' | 'inquiry';
 
@@ -27,12 +26,17 @@ export class AppComponent {
   };
 
   scrollTo(id: string): void {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  openChat(): void {
+  openChat(topic?: string): void {
     this.isChatOpen = true;
-    this.chatStep = 'welcome';
+    this.chatStep = topic ? 'inquiry' : 'welcome';
+
+    if (topic) {
+      this.selectedTopic = topic;
+      this.inquiry.message = `I'm interested in ${topic}.`;
+    }
   }
 
   closeChat(): void {
@@ -48,23 +52,24 @@ export class AppComponent {
   startInquiry(): void {
     this.selectedTopic = '';
     this.chatStep = 'inquiry';
+    this.inquiry.message = '';
   }
 
   sendInquiry(): void {
     const subject = encodeURIComponent(
-      `PureMinds Inquiry${this.selectedTopic ? ` - ${this.selectedTopic}` : ''}`
+      `Qyveriq Inquiry${this.selectedTopic ? ` - ${this.selectedTopic}` : ''}`
     );
 
     const body = encodeURIComponent(
       `Name: ${this.inquiry.name}\n` +
       `Email: ${this.inquiry.email}\n` +
-      `Company: ${this.inquiry.company}\n` +
-      `Phone: ${this.inquiry.phone}\n` +
+      `Company: ${this.inquiry.company || 'Not provided'}\n` +
+      `Phone: ${this.inquiry.phone || 'Not provided'}\n` +
       `Interest: ${this.selectedTopic || 'General Inquiry'}\n\n` +
       `Message:\n${this.inquiry.message}`
     );
 
-    // Replace this address with your real business email.
+    // This opens the visitor's configured email application; it does not send silently.
     window.location.href = `mailto:info@qyveriq.com?subject=${subject}&body=${body}`;
   }
 }

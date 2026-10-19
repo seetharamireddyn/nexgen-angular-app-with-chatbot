@@ -32,6 +32,9 @@ import {
   TemplateRef,
   Version,
   ViewContainerRef,
+  __async,
+  __spreadProps,
+  __spreadValues,
   booleanAttribute,
   createNgModule,
   findLocaleData,
@@ -58,12 +61,7 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-ITDRBM2G.js";
-import {
-  __async,
-  __spreadProps,
-  __spreadValues
-} from "./chunk-WDMUDEB6.js";
+} from "./chunk-GRJQM2FL.js";
 
 // node_modules/@angular/common/fesm2022/_platform_location-chunk.mjs
 var _DOM = null;
@@ -4634,4 +4632,4 @@ export {
   XhrFactory,
   PLATFORM_BROWSER_ID
 };
-//# sourceMappingURL=chunk-JTGSKA35.js.map
+//# sourceMappingURL=chunk-JNHUJ4PS.js.map
