@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import emailjs from '@emailjs/browser';
 
 type ChatStep = 'welcome' | 'inquiry';
 
@@ -68,8 +69,6 @@ export class AppComponent {
       `Interest: ${this.selectedTopic || 'General Inquiry'}\n\n` +
       `Message:\n${this.inquiry.message}`
     );
-
-    // This opens the visitor's configured email application; it does not send silently.
     window.location.href = `mailto:info@qyveriq.com?subject=${subject}&body=${body}`;
   }
 }
