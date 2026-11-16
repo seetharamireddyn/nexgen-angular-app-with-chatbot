@@ -9,7 +9,7 @@ export class SupabaseService {
 
   private supabase: SupabaseClient = createClient(
     'https://bkmbojmjdpicfzkwdzpq.supabase.co',
-    '*******'
+    '*****'
   );
 
   get client(): SupabaseClient {

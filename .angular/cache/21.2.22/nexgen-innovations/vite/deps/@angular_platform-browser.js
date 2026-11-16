@@ -7,7 +7,7 @@ import {
   getDOM,
   parseCookieValue,
   setRootDomAdapter
-} from "./chunk-NHJ63ZIZ.js";
+} from "./chunk-BR7PVZVL.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   APP_ID,
