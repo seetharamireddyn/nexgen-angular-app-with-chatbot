@@ -9,6 +9,9 @@
       <button type="button" (click)="scrollTo('services')">Services</button>
       <button type="button" (click)="scrollTo('training')">CSV Training</button>
       <button type="button" (click)="scrollTo('vision')">Our Approach</button>
+      <button type="button" (click)="scrollTo('reviews')">
+        Reviews
+      </button>
       <button class="nav-contact" type="button" (click)="openChat()">Contact Us</button>
     </nav>
   </div>
@@ -57,43 +60,55 @@
         <article class="card">
           <div class="card-icon">01</div>
           <h3>Pharma &amp; CSV Training</h3>
-          <p>Practical learning in Computer System Validation (CSV), Computer Software Assurance (CSA), GAMP 5 concepts and regulatory expectations.</p>
-          <button class="text-link" type="button" (click)="openChat('CSV and Pharma Training')">Enquire about training →</button>
+          <p>Practical learning in Computer System Validation (CSV), Computer Software Assurance (CSA), GAMP 5 concepts
+            and regulatory expectations.</p>
+          <button class="text-link" type="button" (click)="openChat('CSV and Pharma Training')">Enquire about training
+            →</button>
         </article>
 
         <article class="card">
           <div class="card-icon">02</div>
           <h3>Computer System Validation</h3>
-          <p>Support for validation planning, risk assessment, testing, traceability, gap assessments and periodic reviews across regulated systems.</p>
-          <button class="text-link" type="button" (click)="openChat('Computer System Validation Support')">Discuss CSV support →</button>
+          <p>Support for validation planning, risk assessment, testing, traceability, gap assessments and periodic
+            reviews across regulated systems.</p>
+          <button class="text-link" type="button" (click)="openChat('Computer System Validation Support')">Discuss CSV
+            support →</button>
         </article>
 
         <article class="card">
           <div class="card-icon">03</div>
           <h3>SOP &amp; Documentation</h3>
-          <p>Structured SOP drafting and review, template development, documentation improvement and regulatory-alignment support.</p>
-          <button class="text-link" type="button" (click)="openChat('SOP and Documentation Support')">Discuss documentation →</button>
+          <p>Structured SOP drafting and review, template development, documentation improvement and
+            regulatory-alignment support.</p>
+          <button class="text-link" type="button" (click)="openChat('SOP and Documentation Support')">Discuss
+            documentation →</button>
         </article>
 
         <article class="card">
           <div class="card-icon">04</div>
           <h3>LIMS Master Data Training</h3>
-          <p>Training focused on master data concepts, configuration awareness, data management and good practices for laboratory systems.</p>
-          <button class="text-link" type="button" (click)="openChat('LIMS Master Data Training')">Ask about LIMS training →</button>
+          <p>Training focused on master data concepts, configuration awareness, data management and good practices for
+            laboratory systems.</p>
+          <button class="text-link" type="button" (click)="openChat('LIMS Master Data Training')">Ask about LIMS
+            training →</button>
         </article>
 
         <article class="card">
           <div class="card-icon">05</div>
           <h3>Digital &amp; IT Solutions</h3>
-          <p>Technology and web solutions that help businesses improve workflows, organize information and support digital operations.</p>
-          <button class="text-link" type="button" (click)="openChat('Digital and IT Solutions')">Discuss a technology need →</button>
+          <p>Technology and web solutions that help businesses improve workflows, organize information and support
+            digital operations.</p>
+          <button class="text-link" type="button" (click)="openChat('Digital and IT Solutions')">Discuss a technology
+            need →</button>
         </article>
 
         <article class="card">
           <div class="card-icon">06</div>
           <h3>Consulting &amp; Project Support</h3>
-          <p>Flexible consulting and delivery support shaped around project objectives, team needs and business priorities.</p>
-          <button class="text-link" type="button" (click)="openChat('Consulting and Project Support')">Talk to a consultant →</button>
+          <p>Flexible consulting and delivery support shaped around project objectives, team needs and business
+            priorities.</p>
+          <button class="text-link" type="button" (click)="openChat('Consulting and Project Support')">Talk to a
+            consultant →</button>
         </article>
       </div>
     </div>
@@ -109,14 +124,54 @@
       </p>
 
       <div class="training-grid">
-        <article class="training-item"><span>01</span><div><h3>CSV lifecycle &amp; GAMP 5</h3><p>Understand validation stages, system categorization and lifecycle documentation.</p></div></article>
-        <article class="training-item"><span>02</span><div><h3>Planning &amp; risk assessment</h3><p>Explore validation plans, risk-based approaches and fit-for-purpose testing.</p></div></article>
-        <article class="training-item"><span>03</span><div><h3>Requirements &amp; traceability</h3><p>Learn about URS, functional specifications, test cases and traceability matrices.</p></div></article>
-        <article class="training-item"><span>04</span><div><h3>IQ, OQ, PQ &amp; test execution</h3><p>Review qualification protocols, test evidence, deviations and documentation practices.</p></div></article>
-        <article class="training-item"><span>05</span><div><h3>CSA &amp; risk-based assurance</h3><p>Understand critical thinking and risk-based assurance concepts for software.</p></div></article>
-        <article class="training-item"><span>06</span><div><h3>Data integrity &amp; regulations</h3><p>Explore electronic records, electronic signatures, data integrity and audit readiness.</p></div></article>
-        <article class="training-item"><span>07</span><div><h3>Gap assessment &amp; periodic review</h3><p>Identify documentation or process gaps and organize practical follow-up actions.</p></div></article>
-        <article class="training-item"><span>08</span><div><h3>Vendor &amp; audit readiness</h3><p>Discuss supplier oversight, evidence review and preparation for inspections.</p></div></article>
+        <article class="training-item"><span>01</span>
+          <div>
+            <h3>CSV lifecycle &amp; GAMP 5</h3>
+            <p>Understand validation stages, system categorization and lifecycle documentation.</p>
+          </div>
+        </article>
+        <article class="training-item"><span>02</span>
+          <div>
+            <h3>Planning &amp; risk assessment</h3>
+            <p>Explore validation plans, risk-based approaches and fit-for-purpose testing.</p>
+          </div>
+        </article>
+        <article class="training-item"><span>03</span>
+          <div>
+            <h3>Requirements &amp; traceability</h3>
+            <p>Learn about URS, functional specifications, test cases and traceability matrices.</p>
+          </div>
+        </article>
+        <article class="training-item"><span>04</span>
+          <div>
+            <h3>IQ, OQ, PQ &amp; test execution</h3>
+            <p>Review qualification protocols, test evidence, deviations and documentation practices.</p>
+          </div>
+        </article>
+        <article class="training-item"><span>05</span>
+          <div>
+            <h3>CSA &amp; risk-based assurance</h3>
+            <p>Understand critical thinking and risk-based assurance concepts for software.</p>
+          </div>
+        </article>
+        <article class="training-item"><span>06</span>
+          <div>
+            <h3>Data integrity &amp; regulations</h3>
+            <p>Explore electronic records, electronic signatures, data integrity and audit readiness.</p>
+          </div>
+        </article>
+        <article class="training-item"><span>07</span>
+          <div>
+            <h3>Gap assessment &amp; periodic review</h3>
+            <p>Identify documentation or process gaps and organize practical follow-up actions.</p>
+          </div>
+        </article>
+        <article class="training-item"><span>08</span>
+          <div>
+            <h3>Vendor &amp; audit readiness</h3>
+            <p>Discuss supplier oversight, evidence review and preparation for inspections.</p>
+          </div>
+        </article>
       </div>
 
       <div class="training-callout">
@@ -125,7 +180,8 @@
           <h3>Learn the concepts. Practice the process.</h3>
           <p>Ask us about training formats, course coverage and a program suited to your needs.</p>
         </div>
-        <button class="primary-btn" type="button" (click)="openChat('CSV Training Enquiry')">Enquire About Training</button>
+        <button class="primary-btn" type="button" (click)="openChat('CSV Training Enquiry')">Enquire About
+          Training</button>
       </div>
     </div>
   </section>
@@ -148,9 +204,24 @@
       </div>
 
       <div class="about-highlights">
-        <article><span class="mini-icon">✓</span><div><h3>Practical approach</h3><p>Learning and support grounded in real-world scenarios.</p></div></article>
-        <article><span class="mini-icon">✓</span><div><h3>Tailored engagement</h3><p>Services shaped around your systems, goals and team requirements.</p></div></article>
-        <article><span class="mini-icon">✓</span><div><h3>Quality mindset</h3><p>Clear documentation, risk awareness and a focus on compliance.</p></div></article>
+        <article><span class="mini-icon">✓</span>
+          <div>
+            <h3>Practical approach</h3>
+            <p>Learning and support grounded in real-world scenarios.</p>
+          </div>
+        </article>
+        <article><span class="mini-icon">✓</span>
+          <div>
+            <h3>Tailored engagement</h3>
+            <p>Services shaped around your systems, goals and team requirements.</p>
+          </div>
+        </article>
+        <article><span class="mini-icon">✓</span>
+          <div>
+            <h3>Quality mindset</h3>
+            <p>Clear documentation, risk awareness and a focus on compliance.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -164,9 +235,155 @@
         accessible—helping professionals build confidence and organizations move
         forward with quality, compliance and innovation in mind.
       </p>
-      <div class="vision-tags"><span>People</span><span>Quality</span><span>Compliance</span><span>Innovation</span></div>
+      <div class="vision-tags"><span>People</span><span>Quality</span><span>Compliance</span><span>Innovation</span>
+      </div>
     </div>
   </section>
+
+
+  
+<section class="section reviews" id="reviews">
+  <div class="container">
+
+    <p class="section-label">Customer Feedback</p>
+    <h2>What Our Customers Say</h2>
+
+    <p class="section-intro">
+      Your feedback helps us improve and grow.
+    </p>
+
+    <!-- Existing Customer Reviews -->
+    @if (reviewsLoading) {
+      <p class="reviews-loading">Loading reviews...</p>
+    } @else {
+
+      <div class="cards">
+
+        @for (review of reviews; track review.id) {
+          <article class="card">
+
+            <div class="review-stars">
+              {{ '★'.repeat(review.rating) }}
+            </div>
+
+            <p>{{ review.message }}</p>
+
+            <h3>{{ review.name }}</h3>
+
+            @if (review.company) {
+              <small>{{ review.company }}</small>
+            }
+
+          </article>
+        } @empty {
+          <p class="no-reviews">
+            No customer reviews yet. Be the first to share your experience!
+          </p>
+        }
+
+      </div>
+    }
+
+    <!-- Write a Review Button -->
+    @if (!showReviewForm) {
+      <div class="review-cta">
+        <h3>Have you worked with Qyveriq?</h3>
+
+        <p>We would love to hear about your experience.</p>
+
+        <button
+          class="primary-btn"
+          type="button"
+          (click)="openReviewForm()">
+          Write a Review
+        </button>
+      </div>
+    }
+
+    <!-- Review Submission Form -->
+    @if (showReviewForm) {
+      <div class="review-form" id="review-form">
+
+        <h3>Share Your Experience</h3>
+
+        <p>Tell us about your experience with Qyveriq.</p>
+
+        <form (ngSubmit)="submitReview()">
+
+          <label>
+            Your Name *
+            <input
+              type="text"
+              name="reviewName"
+              [(ngModel)]="newReview.name"
+              required
+              maxlength="100">
+          </label>
+
+          <label>
+            Company
+            <input
+              type="text"
+              name="reviewCompany"
+              [(ngModel)]="newReview.company"
+              maxlength="150">
+          </label>
+
+          <label>
+            Rating *
+            <select
+              name="reviewRating"
+              [(ngModel)]="newReview.rating"
+              required>
+              <option [ngValue]="5">★★★★★ - Excellent</option>
+              <option [ngValue]="4">★★★★ - Very Good</option>
+              <option [ngValue]="3">★★★ - Good</option>
+              <option [ngValue]="2">★★ - Average</option>
+              <option [ngValue]="1">★ - Poor</option>
+            </select>
+          </label>
+
+          <label>
+            Your Review *
+            <textarea
+              name="reviewMessage"
+              [(ngModel)]="newReview.message"
+              required
+              minlength="10"
+              maxlength="1000"
+              rows="4">
+            </textarea>
+          </label>
+
+          <div class="review-form-actions">
+
+            <button
+              class="secondary-btn"
+              type="button"
+              (click)="closeReviewForm()">
+              Cancel
+            </button>
+
+            <button
+              class="primary-btn"
+              type="submit"
+              [disabled]="reviewSubmitting">
+              {{ reviewSubmitting ? 'Submitting...' : 'Submit Review' }}
+            </button>
+
+          </div>
+
+        </form>
+      </div>
+    }
+
+    @if (reviewMessage) {
+      <p class="review-message">{{ reviewMessage }}</p>
+    }
+
+  </div>
+</section>
+
 
   <section class="section contact" id="contact">
     <div class="container contact-panel">
@@ -192,73 +409,84 @@
 </footer>
 
 @if (isChatOpen) {
-  <div class="chat-overlay" (click)="closeChat()" aria-hidden="true"></div>
+<div class="chat-overlay" (click)="closeChat()" aria-hidden="true"></div>
 
-  <aside class="chatbot" role="dialog" aria-modal="true" aria-labelledby="chat-title">
-    <div class="chat-header">
-      <div class="chat-brand">
-        <div class="chat-avatar">Q</div>
-        <div>
-          <strong id="chat-title">Qyveriq Assistant</strong>
-          <span>Pharma, life sciences &amp; technology</span>
-        </div>
+<aside class="chatbot" role="dialog" aria-modal="true" aria-labelledby="chat-title">
+  <div class="chat-header">
+    <div class="chat-brand">
+      <div class="chat-avatar">Q</div>
+      <div>
+        <strong id="chat-title">Qyveriq Assistant</strong>
+        <span>Pharma, life sciences &amp; technology</span>
       </div>
-      <button class="close-chat" type="button" (click)="closeChat()" aria-label="Close contact assistant">×</button>
+    </div>
+    <button class="close-chat" type="button" (click)="closeChat()" aria-label="Close contact assistant">×</button>
+  </div>
+
+  @if (chatStep === 'welcome') {
+  <div class="chat-body">
+    <div class="bot-message">
+      <strong>Hello! Welcome to Qyveriq.</strong>
+      <p>What would you like to discuss with our team?</p>
+    </div>
+    <div class="topic-list">
+      <button type="button" (click)="chooseTopic('CSV and Pharma Training')"><span>🎓</span><span>CSV &amp; Pharma
+          Training</span></button>
+      <button type="button" (click)="chooseTopic('Computer System Validation Support')"><span>✓</span><span>Computer
+          System Validation</span></button>
+      <button type="button" (click)="chooseTopic('LIMS Master Data Training')"><span>🧪</span><span>LIMS Master Data
+          Training</span></button>
+      <button type="button" (click)="chooseTopic('SOP and Documentation Support')"><span>📄</span><span>SOP &amp;
+          Documentation</span></button>
+      <button type="button" (click)="chooseTopic('Digital and IT Solutions')"><span>💻</span><span>Digital &amp; IT
+          Solutions</span></button>
+      <button type="button" class="inquiry-option" (click)="startInquiry()"><span>✉</span><span>General
+          Inquiry</span></button>
+    </div>
+  </div>
+  } @else {
+  <form class="chat-body inquiry-form" (ngSubmit)="sendInquiry()">
+    <div class="bot-message">
+      <strong>Let's talk about your requirement.</strong>
+      <p>{{ selectedTopic || 'General inquiry' }}. Share your details and your email application will open with the
+        inquiry prepared.</p>
     </div>
 
-    @if (chatStep === 'welcome') {
-      <div class="chat-body">
-        <div class="bot-message">
-          <strong>Hello! Welcome to Qyveriq.</strong>
-          <p>What would you like to discuss with our team?</p>
-        </div>
-        <div class="topic-list">
-          <button type="button" (click)="chooseTopic('CSV and Pharma Training')"><span>🎓</span><span>CSV &amp; Pharma Training</span></button>
-          <button type="button" (click)="chooseTopic('Computer System Validation Support')"><span>✓</span><span>Computer System Validation</span></button>
-          <button type="button" (click)="chooseTopic('LIMS Master Data Training')"><span>🧪</span><span>LIMS Master Data Training</span></button>
-          <button type="button" (click)="chooseTopic('SOP and Documentation Support')"><span>📄</span><span>SOP &amp; Documentation</span></button>
-          <button type="button" (click)="chooseTopic('Digital and IT Solutions')"><span>💻</span><span>Digital &amp; IT Solutions</span></button>
-          <button type="button" class="inquiry-option" (click)="startInquiry()"><span>✉</span><span>General Inquiry</span></button>
-        </div>
-      </div>
-    } @else {
-      <form class="chat-body inquiry-form" (ngSubmit)="sendInquiry()">
-        <div class="bot-message">
-          <strong>Let's talk about your requirement.</strong>
-          <p>{{ selectedTopic || 'General inquiry' }}. Share your details and your email application will open with the inquiry prepared.</p>
-        </div>
+    <label>
+      Name <span>*</span>
+      <input type="text" name="name" [(ngModel)]="inquiry.name" required autocomplete="name"
+        placeholder="Your full name">
+    </label>
 
-        <label>
-          Name <span>*</span>
-          <input type="text" name="name" [(ngModel)]="inquiry.name" required autocomplete="name" placeholder="Your full name">
-        </label>
+    <label>
+      Email <span>*</span>
+      <input type="email" name="email" [(ngModel)]="inquiry.email" required autocomplete="email"
+        placeholder="you@example.com">
+    </label>
 
-        <label>
-          Email <span>*</span>
-          <input type="email" name="email" [(ngModel)]="inquiry.email" required autocomplete="email" placeholder="you@example.com">
-        </label>
+    <label>
+      Company
+      <input type="text" name="company" [(ngModel)]="inquiry.company" autocomplete="organization"
+        placeholder="Company name (optional)">
+    </label>
 
-        <label>
-          Company
-          <input type="text" name="company" [(ngModel)]="inquiry.company" autocomplete="organization" placeholder="Company name (optional)">
-        </label>
+    <label>
+      Phone
+      <input type="tel" name="phone" [(ngModel)]="inquiry.phone" autocomplete="tel" placeholder="+91 (optional)">
+    </label>
 
-        <label>
-          Phone
-          <input type="tel" name="phone" [(ngModel)]="inquiry.phone" autocomplete="tel" placeholder="+91 (optional)">
-        </label>
+    <label>
+      Message <span>*</span>
+      <textarea name="message" [(ngModel)]="inquiry.message" required rows="4"
+        placeholder="Tell us how we can help..."></textarea>
+    </label>
 
-        <label>
-          Message <span>*</span>
-          <textarea name="message" [(ngModel)]="inquiry.message" required rows="4" placeholder="Tell us how we can help..."></textarea>
-        </label>
-
-        <div class="form-actions">
-          <button class="back-btn" type="button" (click)="chatStep = 'welcome'">Back</button>
-          <button class="send-btn" type="submit">Prepare Inquiry ✉</button>
-        </div>
-        <small class="mail-note">This opens your default email app. Your message is not sent automatically.</small>
-      </form>
-    }
-  </aside>
+    <div class="form-actions">
+      <button class="back-btn" type="button" (click)="chatStep = 'welcome'">Back</button>
+      <button class="send-btn" type="submit">Prepare Inquiry ✉</button>
+    </div>
+    <small class="mail-note">This opens your default email app. Your message is not sent automatically.</small>
+  </form>
+  }
+</aside>
 }
