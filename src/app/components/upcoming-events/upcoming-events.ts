@@ -32,7 +32,7 @@ import {
 export class UpcomingEvents {
   private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
-  private openedFromEventsRoute = false;
+  private openedFromEventsLink = false;
 
   constructor(
     private eventsService: EventsService,
@@ -58,15 +58,17 @@ export class UpcomingEvents {
   showEventRegistration = false;
 
   private syncWithRoute(): void {
-    const path = this.router.url.split(/[?#]/, 1)[0].replace(/\/+$/, '');
-    const isEventsRoute = path === '/events';
+    const [urlPath, query = ''] = this.router.url.split('?');
+    const path = urlPath.split('#')[0].replace(/\/+$/, '');
+    const showEventsParam = new URLSearchParams(query.split('#')[0]).get('showEvents');
+    const shouldOpenEvents = path === '/events' || showEventsParam === '1';
 
-    if (isEventsRoute) {
-      this.openedFromEventsRoute = true;
+    if (shouldOpenEvents) {
+      this.openedFromEventsLink = true;
       this.showUpcomingEvents = true;
       setTimeout(() => this.scrollTo('events'), 50);
-    } else if (this.openedFromEventsRoute) {
-      this.openedFromEventsRoute = false;
+    } else if (this.openedFromEventsLink) {
+      this.openedFromEventsLink = false;
       this.showUpcomingEvents = false;
     }
   }
