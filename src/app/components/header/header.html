@@ -2,7 +2,7 @@
   <div class="container nav">
 
     <!-- Logo -->
-    <a class="brand" routerLink="/home" aria-label="Qyveriq Technologies home" (click)="closeMobileMenu()">
+    <a class="brand" routerLink="/" aria-label="Qyveriq Technologies home" (click)="closeMobileMenu()">
       <img src="assets/qyveriq_logo.png" alt="Qyveriq Technologies">
     </a>
 
@@ -32,7 +32,7 @@
 
   <!-- Mobile navigation -->
   <nav class="mobile-nav" [class.mobile-nav-open]="isMobileMenuOpen" aria-label="Mobile navigation">
-    <a routerLink="/home" routerLinkActive="active" (click)="closeMobileMenu()">Home</a>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMobileMenu()">Home</a>
     <a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About</a>
     <a routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">Services</a>
     <a routerLink="/csv-training" routerLinkActive="active" (click)="closeMobileMenu()">CSV Training</a>

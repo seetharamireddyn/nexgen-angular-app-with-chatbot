@@ -1,10 +1,15 @@
 
 import {
   Component,
-  ChangeDetectorRef
+  ChangeDetectorRef,
+  DestroyRef,
+  inject
 } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
+import { NavigationEnd, Router } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { filter } from 'rxjs';
 import {
   EventsService,
   EventItem
@@ -25,11 +30,22 @@ import {
   styleUrl: './upcoming-events.css'
 })
 export class UpcomingEvents {
+  private readonly router = inject(Router);
+  private readonly destroyRef = inject(DestroyRef);
+  private openedFromEventsRoute = false;
 
   constructor(
     private eventsService: EventsService,
     private cdr: ChangeDetectorRef
   ) {
+    this.syncWithRoute();
+    this.router.events
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe(() => this.syncWithRoute());
+
     this.loadUpcomingEvents();
   }
 
@@ -40,6 +56,20 @@ export class UpcomingEvents {
   selectedEvent: EventItem | null = null;
 
   showEventRegistration = false;
+
+  private syncWithRoute(): void {
+    const path = this.router.url.split(/[?#]/, 1)[0].replace(/\/+$/, '');
+    const isEventsRoute = path === '/events';
+
+    if (isEventsRoute) {
+      this.openedFromEventsRoute = true;
+      this.showUpcomingEvents = true;
+      setTimeout(() => this.scrollTo('events'), 50);
+    } else if (this.openedFromEventsRoute) {
+      this.openedFromEventsRoute = false;
+      this.showUpcomingEvents = false;
+    }
+  }
 
   toggleUpcomingEvents(): void {
     this.showUpcomingEvents = !this.showUpcomingEvents;

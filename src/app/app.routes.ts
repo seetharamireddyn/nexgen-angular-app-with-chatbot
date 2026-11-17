@@ -7,8 +7,9 @@ import { Reviews } from './components/reviews/reviews';
 import { Contact } from './components/contact/contact';
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '', pathMatch: 'full', component: Home },
   { path: 'home', component: Home },
+  { path: 'events', component: Home },
   { path: 'about', component: About },
   { path: 'services', component: Services },
   { path: 'csv-training', component: CsvTraining },

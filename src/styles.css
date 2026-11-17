@@ -1041,14 +1041,10 @@ footer {
   color: #079b91;
 }
 
-.desktop-nav a.active:not(.contact-link) {
-  color: #079b91;
-}
-
-.desktop-nav .contact-link {
+.desktop-nav a.active {
   padding: 13px 20px;
   border-radius: 9px;
-  color: white;
+  color: #fff;
   background: linear-gradient(110deg, #073b80, #079b91);
 }
 
