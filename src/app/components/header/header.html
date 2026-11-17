@@ -1,0 +1,45 @@
+<header class="site-header">
+  <div class="container nav">
+
+    <!-- Logo -->
+    <button class="brand" type="button" (click)="scrollTo('home')">
+      <img src="assets/qyveriq_logo.png" alt="Qyveriq Technologies">
+    </button>
+
+    <!-- Desktop navigation -->
+    <nav class="desktop-nav"> 
+      <a (click)="scrollTo('about')">About</a>
+      <a (click)="scrollTo('services')">Services</a>
+      <a (click)="scrollTo('csv-training')">CSV Training</a>
+      <a (click)="scrollTo('approach')">Our Approach</a>
+      <a (click)="scrollTo('reviews')">Reviews</a>
+      <a class="contact-link" (click)="scrollTo('contact')">Contact Us</a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      type="button"
+      class="mobile-menu-toggle"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="isMobileMenuOpen"
+      aria-label="Toggle navigation menu">
+
+      <span [class.open]="isMobileMenuOpen"></span>
+      <span [class.open]="isMobileMenuOpen"></span>
+      <span [class.open]="isMobileMenuOpen"></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile navigation -->
+  <nav class="mobile-nav" [class.mobile-nav-open]="isMobileMenuOpen">
+
+    <a (click)="mobileNavigate('about')">About</a>
+    <a (click)="mobileNavigate('services')">Services</a>
+    <a (click)="mobileNavigate('csv-training')">CSV Training</a>
+    <a (click)="mobileNavigate('approach')">Our Approach</a>
+    <a (click)="mobileNavigate('reviews')">Reviews</a>
+    <a (click)="mobileNavigate('contact')">Contact Us</a>
+
+  </nav>
+</header>

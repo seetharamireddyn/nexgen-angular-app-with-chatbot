@@ -1,0 +1,59 @@
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <p class="section-label">Customer Feedback</p>
+    <h2>What Our Customers Say</h2>
+    <p class="section-intro">Your feedback helps us improve and grow.</p>
+
+    @if (reviewsLoading) {
+      <p class="reviews-loading">Loading reviews...</p>
+    } @else {
+      <div class="cards">
+        @for (review of reviews; track review.id) {
+          <article class="card">
+            <div class="review-stars">{{ '★'.repeat(review.rating) }}</div>
+            <p>{{ review.message }}</p>
+            <h3>{{ review.name }}</h3>
+            @if (review.company) { <small>{{ review.company }}</small> }
+          </article>
+        } @empty {
+          <p class="no-reviews">No customer reviews yet. Be the first to share your experience!</p>
+        }
+      </div>
+    }
+
+    @if (!showReviewForm) {
+      <div class="review-cta">
+        <h3>Have you worked with Qyveriq?</h3>
+        <p>We would love to hear about your experience.</p>
+        <button class="primary-btn" type="button" (click)="openReviewForm()">Write a Review</button>
+      </div>
+    }
+
+    @if (showReviewForm) {
+      <div class="review-form" id="review-form">
+        <h3>Share Your Experience</h3>
+        <p>Tell us about your experience with Qyveriq.</p>
+        <form (ngSubmit)="submitReview()">
+          <label>Your Name *<input type="text" name="reviewName" [(ngModel)]="newReview.name" required maxlength="100"></label>
+          <label>Company<input type="text" name="reviewCompany" [(ngModel)]="newReview.company" maxlength="150"></label>
+          <label>Rating *
+            <select name="reviewRating" [(ngModel)]="newReview.rating" required>
+              <option [ngValue]="5">★★★★★ - Excellent</option>
+              <option [ngValue]="4">★★★★ - Very Good</option>
+              <option [ngValue]="3">★★★ - Good</option>
+              <option [ngValue]="2">★★ - Average</option>
+              <option [ngValue]="1">★ - Poor</option>
+            </select>
+          </label>
+          <label>Your Review *<textarea name="reviewMessage" [(ngModel)]="newReview.message" required minlength="10" maxlength="1000" rows="4"></textarea></label>
+          <div class="review-form-actions">
+            <button class="secondary-btn" type="button" (click)="closeReviewForm()">Cancel</button>
+            <button class="primary-btn" type="submit" [disabled]="reviewSubmitting">{{ reviewSubmitting ? 'Submitting...' : 'Submit Review' }}</button>
+          </div>
+        </form>
+      </div>
+    }
+
+    @if (reviewMessage) { <p class="review-message">{{ reviewMessage }}</p> }
+  </div>
+</section>

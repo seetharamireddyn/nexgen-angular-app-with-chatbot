@@ -1,0 +1,93 @@
+<!-- Event Registration Modal -->
+  <div class="registration-overlay" (click)="closeEventRegistration()">
+
+    <div class="registration-modal" (click)="$event.stopPropagation()">
+
+      <div class="registration-header">
+        <div>
+          <span class="registration-label">QYVERIQ TECHNOLOGIES</span>
+          <h2>Event Registration</h2>
+          <p>Register your interest in our upcoming training.</p>
+        </div>
+
+        <button type="button" class="registration-close" aria-label="Close registration"
+          (click)="closeEventRegistration()">
+          &times;
+        </button>
+      </div>
+
+      <div class="registration-event">
+        <span>Selected Event</span>
+        <strong>{{ newRegistration.eventTitle }}</strong>
+      </div>
+
+      <form #registrationForm="ngForm" (ngSubmit)="submitEventRegistration(registrationForm)">
+
+        <div class="registration-fields">
+
+          <div class="form-group">
+            <label for="fullName">Full Name <span>*</span></label>
+            <input id="fullName" type="text" name="fullName" [(ngModel)]="newRegistration.fullName"
+              placeholder="Enter your full name" required #fullName="ngModel">
+            @if (fullName.invalid && fullName.touched) {
+            <small class="field-error">Please enter your name.</small>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span>*</span></label>
+            <input id="email" type="email" name="email" [(ngModel)]="newRegistration.email"
+              placeholder="Enter your email address" required email #email="ngModel">
+            @if (email.invalid && email.touched) {
+            <small class="field-error">Please enter a valid email address.</small>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="mobile">Mobile Number <span>*</span></label>
+            <input id="mobile" type="tel" name="mobile" [(ngModel)]="newRegistration.mobile"
+              placeholder="Enter your mobile number" required pattern="[0-9+\-\s()]{10,15}" #mobile="ngModel">
+            @if (mobile.invalid && mobile.touched) {
+            <small class="field-error">Please enter a valid mobile number.</small>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input id="company" type="text" name="company" [(ngModel)]="newRegistration.company"
+              placeholder="Enter your company name">
+          </div>
+
+        </div>
+
+        @if (eventMessage) {
+        <div class="registration-message" [class.success]="eventMessageType === 'success'"
+          [class.error]="eventMessageType === 'error'">
+          {{ eventMessage }}
+        </div>
+        }
+
+        <div class="registration-actions">
+          <button type="button" class="registration-cancel" (click)="closeEventRegistration()">
+            Cancel
+          </button>
+
+          <button type="submit" class="registration-submit" [disabled]="registrationForm.invalid || eventSubmitting">
+
+            @if (eventSubmitting) {
+            Submitting...
+            } @else {
+            Submit Registration →
+            }
+          </button>
+        </div>
+
+        <p class="registration-note">
+          * Required fields. Your details will be used for event registration.
+        </p>
+
+      </form>
+    </div>
+  </div>
+
+   
