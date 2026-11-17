@@ -1,3 +1,24 @@
+@if (!isOpen) {
+  <button
+    type="button"
+    class="floating-chat-btn"
+    aria-label="Open Qyveriq chat assistant"
+    (click)="openChat()">
+    <span class="chat-btn-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M5 18.5 3.8 21l4.1-1.2c1.2.7 2.6 1.1 4.1 1.1 5 0 9-3.8 9-8.5s-4-8.5-9-8.5-9 3.8-9 8.5c0 2.4.8 4.6 2 6.1Z" />
+        <path d="M8 12h.01M12 12h.01M16 12h.01" />
+      </svg>
+    </span>
+    <span class="chat-btn-content">
+      <strong>Contact us</strong>
+      <small>We're here to help</small>
+    </span>
+    <span class="chat-btn-arrow" aria-hidden="true">→</span>
+    <span class="chat-btn-badge" aria-hidden="true">CHAT</span>
+  </button>
+}
+
 @if (isOpen) {
   <div class="chat-overlay" (click)="closeChat()" aria-hidden="true"></div>
   <aside class="chatbot" role="dialog" aria-modal="true" aria-labelledby="chat-title">

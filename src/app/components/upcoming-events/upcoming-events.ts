@@ -19,6 +19,17 @@ import {
   EventRegistration
 } from '../event-registration/event-registration';
 
+const legacySapLearningTopics = [
+  'SAP in GxP Environments',
+  'SAP Validation Lifecycle',
+  'SAP FI/CO, MM, SD, QM and PP',
+  'LIMS and MES Integration',
+  'Risk Assessment and Impact Analysis',
+  'Data Integrity and Change Control',
+  'Testing and Documentation',
+  '21 CFR Part 11, EU Annex 11 and GAMP 5'
+];
+
 @Component({
   selector: 'app-upcoming-events',
   standalone: true,
@@ -99,6 +110,16 @@ export class UpcomingEvents {
 
   }
 
+  formatEventMode(mode: EventItem['mode']): string {
+    const labels: Record<EventItem['mode'], string> = {
+      online: 'Online Session',
+      offline: 'In Person',
+      hybrid: 'Hybrid'
+    };
+
+    return labels[mode];
+  }
+
   closeEventRegistration(): void {
     this.showEventRegistration = false;
     this.selectedEvent = null;
@@ -106,8 +127,8 @@ export class UpcomingEvents {
 
   async loadUpcomingEvents(): Promise<void> {
     try {
-      this.upcomingEvents =
-        await this.eventsService.getUpcomingEvents();
+      const events = await this.eventsService.getUpcomingEvents();
+      this.upcomingEvents = events.map((event) => this.restoreLegacySapDetails(event));
 
     } catch (error) {
       console.error(
@@ -120,5 +141,22 @@ export class UpcomingEvents {
     } finally {
       this.cdr.markForCheck();
     }
+  }
+
+  private restoreLegacySapDetails(event: EventItem): EventItem {
+    if (event.title !== 'SAP Validation Approach') {
+      return event;
+    }
+
+    return {
+      ...event,
+      poster_url: event.poster_url?.trim() || 'assets/sap-validation-approach.jpeg',
+      duration: event.duration?.trim() || '2 Hours',
+      training_fee: event.training_fee?.trim() || '₹2,000/-',
+      certificate: event.certificate?.trim() || 'Participation',
+      learning_topics: event.learning_topics?.length
+        ? event.learning_topics
+        : legacySapLearningTopics
+    };
   }
 }

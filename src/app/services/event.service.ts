@@ -11,6 +11,11 @@ export interface EventItem {
     end_time?: string | null;
     mode: 'online' | 'offline' | 'hybrid';
     location?: string | null;
+    poster_url?: string | null;
+    duration?: string | null;
+    training_fee?: string | null;
+    certificate?: string | null;
+    learning_topics?: string[] | null;
     registration_url?: string | null;
     capacity?: number | null;
     status: 'upcoming' | 'completed' | 'cancelled';
@@ -50,6 +55,8 @@ export class EventsService {
   const { data, error } = await this.supabaseService.client
     .from('events')
     .select('*')
+    .eq('is_published', true)
+    .eq('status', 'upcoming')
     .order('event_date', { ascending: true });
 
   console.log('Events from Supabase:', data);
@@ -88,6 +95,8 @@ export class EventsService {
         const { data, error } = await this.supabaseService.client
             .from('events')
             .select('*')
+            .eq('is_published', true)
+            .eq('status', 'upcoming')
             .order('event_date', { ascending: true });
 
         if (error) {

@@ -4,16 +4,44 @@
     <h2>What Our Customers Say</h2>
     <p class="section-intro">Your feedback helps us improve and grow.</p>
 
+    @if (!reviewsLoading && reviews.length > 0) {
+      <div class="review-summary" role="group" aria-label="Average customer rating and total reviewers">
+        <div class="review-summary-rating">
+          <div>
+            <span class="review-summary-value">{{ averageRating | number:'1.1-1' }}</span>
+            <span class="review-summary-star" aria-hidden="true">★</span>
+            <span class="review-summary-scale">/ 5</span>
+          </div>
+          <span class="review-summary-label">Average rating</span>
+        </div>
+        <span class="review-summary-divider" aria-hidden="true"></span>
+        <div class="review-summary-count">
+          <span class="review-summary-value">{{ reviews.length }}</span>
+          <span class="review-summary-label">Total {{ reviews.length === 1 ? 'reviewer' : 'reviewers' }}</span>
+        </div>
+      </div>
+    }
+
     @if (reviewsLoading) {
       <p class="reviews-loading">Loading reviews...</p>
     } @else {
-      <div class="cards">
+      <div class="cards reviews-grid">
         @for (review of reviews; track review.id) {
-          <article class="card">
-            <div class="review-stars">{{ '★'.repeat(review.rating) }}</div>
-            <p>{{ review.message }}</p>
-            <h3>{{ review.name }}</h3>
-            @if (review.company) { <small>{{ review.company }}</small> }
+          <article class="review-card">
+            <div class="review-card-top">
+              <div class="review-stars" role="img" [attr.aria-label]="review.rating + ' out of 5 stars'">
+                {{ '★'.repeat(review.rating) }}
+              </div>
+              <span class="review-rating-badge">{{ review.rating | number:'1.1-1' }} / 5</span>
+            </div>
+            <blockquote>{{ review.message }}</blockquote>
+            <div class="review-author">
+              <span class="review-avatar" aria-hidden="true">{{ getInitials(review.name) }}</span>
+              <div class="review-author-details">
+                <h3>{{ review.name }}</h3>
+                @if (review.company) { <small>{{ review.company }}</small> }
+              </div>
+            </div>
           </article>
         } @empty {
           <p class="no-reviews">No customer reviews yet. Be the first to share your experience!</p>
@@ -23,8 +51,11 @@
 
     @if (!showReviewForm) {
       <div class="review-cta">
-        <h3>Have you worked with Qyveriq?</h3>
-        <p>We would love to hear about your experience.</p>
+        <div>
+          <span class="review-cta-eyebrow">Your feedback matters</span>
+          <h3>Have you worked with Qyveriq?</h3>
+          <p>Share your experience and help others make confident decisions.</p>
+        </div>
         <button class="primary-btn" type="button" (click)="openReviewForm()">Write a Review</button>
       </div>
     }

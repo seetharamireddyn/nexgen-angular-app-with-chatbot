@@ -1,7 +1,7 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ReviewService } from '../../services/review.service';
+import { Review, ReviewService } from '../../services/review.service';
 
 @Component({
   selector: 'app-reviews',
@@ -11,13 +11,31 @@ import { ReviewService } from '../../services/review.service';
   styleUrl: './reviews.css',
 })
 export class Reviews {
-  reviews: any[] = [];
+  reviews: Review[] = [];
   reviewsLoading = true;
   showReviewForm = false;
   reviewSubmitting = false;
   reviewMessage = '';
 
   newReview = { name: '', company: '', rating: 5, message: '' };
+
+  get averageRating(): number {
+    if (this.reviews.length === 0) {
+      return 0;
+    }
+
+    return this.reviews.reduce((total, review) => total + review.rating, 0) / this.reviews.length;
+  }
+
+  getInitials(name: string): string {
+    return name
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((part) => part.charAt(0).toUpperCase())
+      .join('');
+  }
 
   constructor(private reviewService: ReviewService, private cdr: ChangeDetectorRef) {
     this.loadReviews();

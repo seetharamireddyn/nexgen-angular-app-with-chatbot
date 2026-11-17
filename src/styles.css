@@ -556,33 +556,6 @@ h1 span,
   text-decoration: none;
 }
 
-footer {
-  padding: 24px 0;
-  background: #041b36;
-}
-
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  color: #c8d8e5;
-  font-size: 12px;
-}
-
-.footer-content img {
-  width: 145px;
-  max-height: 52px;
-  object-fit: contain;
-}
-
-.footer-tagline {
-  color: #4bd2ce;
-  font-weight: 700;
-  letter-spacing: .5px;
-}
-
 /* Chatbot contact assistant */
 .chat-overlay {
   position: fixed;
@@ -911,15 +884,6 @@ footer {
     align-items: flex-start;
     flex-direction: column;
     padding: 23px;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-content img {
-    width: 130px;
   }
 
   .chatbot {

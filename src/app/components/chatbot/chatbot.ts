@@ -14,6 +14,7 @@ type ChatStep = 'welcome' | 'inquiry';
 export class Chatbot implements OnChanges {
   @Input() isOpen = false;
   @Input() initialTopic = '';
+  @Output() open = new EventEmitter<void>();
   @Output() close = new EventEmitter<void>();
 
   chatStep: ChatStep = 'welcome';
@@ -30,6 +31,10 @@ export class Chatbot implements OnChanges {
 
   closeChat(): void {
     this.close.emit();
+  }
+
+  openChat(): void {
+    this.open.emit();
   }
 
   chooseTopic(topic: string): void {

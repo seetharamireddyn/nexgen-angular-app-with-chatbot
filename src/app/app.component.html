@@ -10,5 +10,6 @@
 <app-chatbot
   [isOpen]="isChatOpen"
   [initialTopic]="selectedTopic"
+  (open)="openChat()"
   (close)="closeChat()">
 </app-chatbot>

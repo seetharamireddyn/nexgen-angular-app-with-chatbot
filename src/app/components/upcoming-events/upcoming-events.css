@@ -78,6 +78,31 @@
   overflow: hidden;
 }
 
+.event-poster-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  min-height: 260px;
+  padding: 24px;
+  gap: 12px;
+  background: linear-gradient(145deg, #062b59, #087f8d);
+  color: #fff;
+}
+
+.event-poster-placeholder span {
+  color: #74e4dc;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.event-poster-placeholder strong {
+  font-size: clamp(20px, 2.5vw, 28px);
+  line-height: 1.25;
+}
+
 .event-poster {
   width: 100%;
   height: auto;
