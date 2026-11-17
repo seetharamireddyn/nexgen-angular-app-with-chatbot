@@ -1,29 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
-import { Home } from './components/home/home';
 import { UpcomingEvents } from './components/upcoming-events/upcoming-events';
-import { Services } from './components/services/services';
-import { CsvTraining } from './components/csv-training/csv-training';
-import { About } from './components/about/about';
-import { Approach } from './components/approach/approach';
-import { Reviews } from './components/reviews/reviews';
-import { Contact } from './components/contact/contact';
 import { Footer } from './components/footer/footer';
 import { Chatbot } from './components/chatbot/chatbot';
+import { ContactAssistantService } from './services/contact-assistant.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     Header,
-    Home,
+    RouterOutlet,
     UpcomingEvents,
-    Services,
-    CsvTraining,
-    About,
-    Approach,
-    Reviews,
-    Contact,
     Footer,
     Chatbot
   ],
@@ -31,8 +21,17 @@ import { Chatbot } from './components/chatbot/chatbot';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  private readonly destroyRef = inject(DestroyRef);
+  private readonly contactAssistant = inject(ContactAssistantService);
+
   isChatOpen = false;
   selectedTopic = '';
+
+  constructor() {
+    this.contactAssistant.openRequests$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((topic) => this.openChat(topic));
+  }
 
   openChat(topic?: string): void {
     this.isChatOpen = true;

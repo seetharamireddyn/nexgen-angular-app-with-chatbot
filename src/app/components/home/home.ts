@@ -1,4 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { ContactAssistantService } from '../../services/contact-assistant.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +10,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrl: './home.css',
 })
 export class Home {
-  @Output() openChat = new EventEmitter<string | undefined>();
+  private readonly router = inject(Router);
+  private readonly contactAssistant = inject(ContactAssistantService);
 
-  scrollTo(id: string): void {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  openContactAssistant(): void {
+    this.contactAssistant.open();
+  }
+
+  navigateToServices(): void {
+    void this.router.navigate(['/services']);
   }
 }

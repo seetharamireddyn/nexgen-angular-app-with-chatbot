@@ -2,18 +2,17 @@
   <div class="container nav">
 
     <!-- Logo -->
-    <button class="brand" type="button" (click)="scrollTo('home')">
+    <a class="brand" routerLink="/home" aria-label="Qyveriq Technologies home" (click)="closeMobileMenu()">
       <img src="assets/qyveriq_logo.png" alt="Qyveriq Technologies">
-    </button>
+    </a>
 
     <!-- Desktop navigation -->
-    <nav class="desktop-nav"> 
-      <a (click)="scrollTo('about')">About</a>
-      <a (click)="scrollTo('services')">Services</a>
-      <a (click)="scrollTo('csv-training')">CSV Training</a>
-      <a (click)="scrollTo('approach')">Our Approach</a>
-      <a (click)="scrollTo('reviews')">Reviews</a>
-      <a class="contact-link" (click)="scrollTo('contact')">Contact Us</a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About</a>
+      <a routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">Services</a>
+      <a routerLink="/csv-training" routerLinkActive="active" (click)="closeMobileMenu()">CSV Training</a>
+      <a routerLink="/reviews" routerLinkActive="active" (click)="closeMobileMenu()">Reviews</a>
+      <a class="contact-link" routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact Us</a>
     </nav>
 
     <!-- Mobile hamburger -->
@@ -32,14 +31,13 @@
   </div>
 
   <!-- Mobile navigation -->
-  <nav class="mobile-nav" [class.mobile-nav-open]="isMobileMenuOpen">
-
-    <a (click)="mobileNavigate('about')">About</a>
-    <a (click)="mobileNavigate('services')">Services</a>
-    <a (click)="mobileNavigate('csv-training')">CSV Training</a>
-    <a (click)="mobileNavigate('approach')">Our Approach</a>
-    <a (click)="mobileNavigate('reviews')">Reviews</a>
-    <a (click)="mobileNavigate('contact')">Contact Us</a>
+  <nav class="mobile-nav" [class.mobile-nav-open]="isMobileMenuOpen" aria-label="Mobile navigation">
+    <a routerLink="/home" routerLinkActive="active" (click)="closeMobileMenu()">Home</a>
+    <a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About</a>
+    <a routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">Services</a>
+    <a routerLink="/csv-training" routerLinkActive="active" (click)="closeMobileMenu()">CSV Training</a>
+    <a routerLink="/reviews" routerLinkActive="active" (click)="closeMobileMenu()">Reviews</a>
+    <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact Us</a>
 
   </nav>
 </header>

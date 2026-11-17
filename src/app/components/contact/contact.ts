@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ContactAssistantService } from '../../services/contact-assistant.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,5 +9,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrl: './contact.css',
 })
 export class Contact {
-  @Output() openChat = new EventEmitter<void>();
+  private readonly contactAssistant = inject(ContactAssistantService);
+
+  openChat(): void {
+    this.contactAssistant.open();
+  }
 }

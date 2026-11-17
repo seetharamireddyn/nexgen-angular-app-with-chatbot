@@ -1,28 +1,21 @@
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
 export class Header {
   isMobileMenuOpen = false;
 
-  scrollTo(id: string): void {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  mobileNavigate(sectionId: string): void {
+  closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
-
-    setTimeout(() => {
-      this.scrollTo(sectionId);
-    }, 100);
   }
 }
