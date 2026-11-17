@@ -275,7 +275,7 @@
   text-align: left;
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(4, 29, 61, 0.28);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, width 0.25s ease, height 0.25s ease, padding 0.25s ease;
 }
 
 .floating-events-btn:hover {
@@ -294,6 +294,15 @@
   background: rgba(255, 255, 255, 0.14);
   color: #40e0d0;
   font-size: 21px;
+}
+
+.events-btn-icon svg {
+  width: 21px;
+  height: 21px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .events-btn-content {
@@ -430,4 +439,37 @@
     top: 100px;
     padding: 9px 11px;
   }
+}
+
+.floating-events-btn.is-minimized {
+  min-width: 0;
+  height: 48px;
+  justify-content: flex-start;
+  gap: 9px;
+  padding: 5px 13px;
+  border-radius: 24px;
+}
+
+.floating-events-btn.is-minimized .events-btn-arrow,
+.floating-events-btn.is-minimized .events-btn-badge {
+  display: none;
+}
+
+.floating-events-btn.is-minimized .events-btn-content {
+  display: flex;
+  flex: 0 1 auto;
+}
+
+.floating-events-btn.is-minimized .events-btn-content strong {
+  font-size: 13px;
+}
+
+.floating-events-btn.is-minimized .events-btn-content small {
+  display: none;
+}
+
+.floating-events-btn.is-minimized .events-btn-icon {
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
 }
